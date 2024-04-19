@@ -75,4 +75,7 @@ for i in cars:
 • Use insert() to add one new guest to the middle of your list.
 • Use append() to add one new guest to the end of your list.
 • Print a new set of invitation messages, one for each person in your list.
-""" 
+"""   
+listastr: str= ["lecca","le", "palle","lalalalal"]
+print(max(listastr))
+print(min(listastr))
