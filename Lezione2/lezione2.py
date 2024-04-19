@@ -76,6 +76,15 @@ for i in cars:
 • Use append() to add one new guest to the end of your list.
 • Print a new set of invitation messages, one for each person in your list.
 """   
-listastr: str= ["lecca","le", "palle","lalalalal"]
+invitati=["Totti","Mohamed Alì","Jimi Hendrix"]
+
+
+
+
+#esempio fatto in classe su max e min di lista di stringhe
+"""
+listastr: str= ["assagia","le", "mele","piccole"]
 print(max(listastr))
 print(min(listastr))
+"""
+ 
