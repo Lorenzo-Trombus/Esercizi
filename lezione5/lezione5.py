@@ -13,3 +13,5 @@ def is_palindrome(x:int) -> bool:
         return False
     i+= 1
  return False
+
+is_palindrome(121)
