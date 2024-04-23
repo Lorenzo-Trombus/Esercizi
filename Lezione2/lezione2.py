@@ -64,19 +64,33 @@ for i in cars:
 # Make a list that includes at least three people you’d like to invite to dinner.
 # Then use your list to print a message to each person, inviting them to dinner.
 """
-3-5. Changing Guest List: You just heard that one of your guests can’t make the dinner, so you need to send out a new set of invitations. You’ll have to think of someone else to invite.
-• Start with your program from Exercise 3-4. Add a print() call at the end of your program, stating the name of the guest who can’t make it.
-• Modify your list, replacing the name of the guest who can’t make it with the name of the new person you are inviting.
+3-5. Changing Guest List: You just heard that one of your guests can’t make the dinner, 
+so you need to send out a new set of invitations. You’ll have to think of someone else to invite.
+• Start with your program from Exercise 3-4. Add a print() call at the end of your program,
+  stating the name of the guest who can’t make it.
+• Modify your list, replacing the name of the guest who can’t make it with 
+  the name of the new person you are inviting.
 • Print a second set of invitation messages, one for each person who is still in your list.
 
-3-6. More Guests: You just found a bigger dinner table, so now more space is available. Think of three more guests to invite to dinner.
-• Start with your program from Exercise 3-4 or 3-5. Add a print() call to the end of your program, informing people that you found a bigger table.
+3-6. More Guests: You just found a bigger dinner table, so now more space is available. 
+Think of three more guests to invite to dinner.
+• Start with your program from Exercise 3-4 or 3-5. Add a print() call to the end of your program,
+  informing people that you found a bigger table.
 • Use insert() to add one new guest to the beginning of your list.
 • Use insert() to add one new guest to the middle of your list.
 • Use append() to add one new guest to the end of your list.
 • Print a new set of invitation messages, one for each person in your list.
 """   
-invitati=["Totti","Mohamed Alì","Jimi Hendrix"]
+invitati=["Ian Anderson","Mohamed Alì","Jimi Hendrix"]
+invitati.insert(0,"Bob Marley")
+invitati.insert(2,"Jimmy Page")
+invitati.append("Jim Morrison")
+for i in invitati:
+    print(f"ciao {i}, ti va di venire a cena con me?")
+    
+print("Totti nun po' venì")
+print("ho trovato un tavolo più grande")
+
 
 
 
@@ -87,4 +101,3 @@ listastr: str= ["assagia","le", "mele","piccole"]
 print(max(listastr))
 print(min(listastr))
 """
- 
