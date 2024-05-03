@@ -75,22 +75,33 @@ print(display_message("in this chapter I'm learning about fuctions"))
 The function should print a message, such as "One of my favorite books is Alice in Wonderland". 
 Call the function, making sure to include a book title as an argument in the function call.
 """
-def fav_book(title:str):
-    print("One of my favourite books is Alice in wonderland")
+def fav_book(title:str)->str:
+     return f"One of my favourite books is {title}"
+print(fav_book("Fight Club"))
+
 """
 8-3. T-Shirt: Write a function called make_shirt() that accepts a size and the text of a message that should be printed 
 on the shirt. The function should print a sentence summarizing the size of the shirt and the message printed on it. 
 Call the function once using positional arguments to make a shirt. Call the function a second time using keyword arguments.
 """
+def make_shirt(size:str,text:str)->str:
+    return f"la maglietta deve essere della taglia {size} e deve avere scritto:{text}"
+print(make_shirt("L","I <3 Pippo Baudo"))
+print(make_shirt(text="I <3 Pippo Baudo",size="L"))
+ 
 """
 8-4. Large Shirts: Modify the make_shirt() function so that shirts are large by default with a message that reads I love Python.
  Make a large shirt and a medium shirt with the default message, and a shirt of any size with a different message.
 """
+# Guarda 8.3
 """
 8-5. Cities: Write a function called describe_city() that accepts the name of a city and its country.
  The function should print a simple sentence, such as Reykjavik is in Iceland. Give the parameter for the country a default value.
    Call your function for three different cities, at least one of which is not in the default country.
 """
+def descibe_city(name:str,country:str)->str:
+    return f"{name} is in {country}"
+
 """
 8-6. City Names: Write a function called city_country() that takes in the name of a city and its country.
  The function should return a string formatted like this: "Santiago, Chile".
@@ -154,8 +165,19 @@ from module_name import *
 """
 8-17. Styling Functions: Choose any three programs you wrote for this chapter, and make sure they follow the styling guidelines described in this section.
 """
-
+#esercizio facoltativo lezione 5
+"""
+def ransom(note:str,magazine:str)->bool:
+    char_count: dict[str,int]={}
+    for char in magazine:
+        char_count[char]=char_count.get(char,0)+1
+    for char in note:
+        if char_count.get(char,0)==0:
+            return False
+        char_count[char]-=1
     
+    return True
+"""    
 
 
 
