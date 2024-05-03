@@ -98,3 +98,20 @@ def remove_elements(original_set: set[int], elements_to_remove: list[int]) -> se
     original_set1=set(original_lst)
     return original_set1
 print(remove_elements({1, 2, 3, 4}, [2, 3]))
+
+#Esercizio fatto in classe sui tree(media di ciascun livello)
+def visiting_tree_iterative(tree: dict[int, list[int]], root: int):
+    stack: list[int] = [root]
+    while stack: # while len(stack) != 0
+        curr_node = stack.pop(0)
+        if curr_node:
+            print(curr_node)
+            left_child, right_child =\
+                tree[curr_node]
+            if left_child:
+                stack.append(left_child)
+            if right_child:
+                stack.append(right_child)
+    return 
+
+print(visiting_tree_iterative())
