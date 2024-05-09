@@ -135,3 +135,106 @@ class Menu:
 menu=Menu(carbonara)
 print(carbonara)
 
+"""
+class Restaurant:
+    
+    def __init__(self,name,cuisine_type):
+        self.name=name
+        self.cuisine_type=cuisine_type
+        self.number_served=0
+
+    def describe_restaurant(self):
+        print(f"Restaurant={self.name}, cuisine={self.cuisine_type}")
+
+    def open_restaurant(self):
+        print(F"Il ristorante {self.name} è aperto")
+
+    def set_number_served(self,new_number_served):
+        self.number_served=new_number_served
+
+    def increment_number(self):
+        self.number_served+=1
+
+    def clean(self):
+        self.number_served=0
+
+r1=Restaurant(name="la vecchia roma",cuisine_type="Romana",number_served=100)
+
+print(r1.open_restaurant())
+print(r1.describe_restaurant())
+print()
+
+class user:
+    def __init__(self,
+                 first_name,
+                 last_name,
+                 age,
+                 Cf,
+                 email):
+        self.first_name=first_name
+        self.Last_name=last_name
+        self.age=age
+        self.Cf=Cf
+        self.email=email
+
+    def __str__(self):
+        return f""
+
+"""        
+
+class Persona:
+
+    def __init__(self,name:str,cognome:str,data_di_nascita:str,genere:str)->None:
+        self.nome:str=name
+        self.cognome:str=cognome
+        self.data_di_nascita:str=data_di_nascita
+        self.genere:str=genere
+
+    def calcola_età(self):
+        return 10
+
+persona_1:Persona= Persona(name="Lorenzo",cognome="Trombini",data_di_nascita="27/02/05",genere="Maschio")
+
+class Dipendente(Persona):
+    def __init__(self, name: str, cognome: str, data_di_nascita: str, genere: str,ore_lavorate:int) -> None:
+        super().__init__(name, cognome, data_di_nascita, genere)
+
+        self.ore_lavorate:int=ore_lavorate
+
+    def calcola_stipendio(self):
+        return 500.0
+
+dipendente1: Dipendente= Dipendente(name="Lorenzo",cognome="Trombini",data_di_nascita="27/02/05",genere="Maschio",ore_lavorate=500)
+
+class Professore(Dipendente):
+    def __init__(self, name: str,
+                  cognome: str, 
+                  data_di_nascita: str, 
+                  genere: str, 
+                  ore_lavorate: int,
+                  materia_insegnata:int,
+                  ore_di_lezione:int) -> None:
+        super().__init__(name, cognome, data_di_nascita, genere, ore_lavorate)
+
+        self.materia_insegnata:str=materia_insegnata
+        self.ore_di_lezione:int=ore_di_lezione
+
+    def __str__(self) -> str:
+        return f"professor {self.nome} {self.cognome}"
+
+print(persona_1.calcola_età())
+
+print(dipendente1.nome)
+print(dipendente1.calcola_età())
+print(dipendente1.ore_lavorate)
+professore1:Professore=Professore(name="Lorenzo",cognome="Trombini",data_di_nascita="27/02/05",genere="Maschio",ore_lavorate=500,materia_insegnata="italiano",ore_di_lezione=30)
+print(professore1.ore_di_lezione)
+print(str(professore1))  
+
+
+  
+
+
+
+
+#https://github.com/flaat/its.git
