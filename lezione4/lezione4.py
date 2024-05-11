@@ -11,8 +11,8 @@ print(max(listastr))
 print(min(listastr))
 """
 # per ordinare una lista di numeri posso usare "sorted"
-list=[8,0,-23,10,5.6]
-list1= sorted(list)
+list0=[8,0,-23,10,5.6]
+list1= sorted(list0)
 #print(list1)
 
 
@@ -101,12 +101,18 @@ print(make_shirt(text="I <3 Pippo Baudo",size="L"))
 """
 def descibe_city(name:str,country:str)->str:
     return f"{name} is in {country}"
+print(descibe_city("Rome","Italy"))
 
 """
 8-6. City Names: Write a function called city_country() that takes in the name of a city and its country.
  The function should return a string formatted like this: "Santiago, Chile".
    Call your function with at least three city-country pairs, and print the values that are returned.
 """
+def city_country(city:str,country:str):
+    return f"{city}, {country}"
+print(city_country("rome","italy"))
+print(city_country("dublin","ireland"))
+print(city_country("london","UK"))
 
 """
 8-7. Album: Write a function called make_album() that builds a dictionary describing a music album.
@@ -117,6 +123,7 @@ def descibe_city(name:str,country:str)->str:
      If the calling line includes a value for the number of songs, add that value to the album’s dictionary.
        Make at least one new function call that includes the number of songs on an album.
 """
+
 """
 8-8. User Albums: Start with your program from Exercise 8-7. Write a while loop that allows users to enter an album’s artist
  and title. Once you have that information, call make_album() with the user’s input and print the dictionary that’s created. 
@@ -126,22 +133,45 @@ def descibe_city(name:str,country:str)->str:
 8-9. Messages: Make a list containing a series of short text messages. Pass the list to a function called show_messages(), 
 which prints each text message.
 """
+shortMess:list[str] = ["ciao","come va?","tutto bene?"]
+def show_messages(listaMess):
+    for i in listaMess:
+        print(i)
+show_messages(shortMess)
 """
 8-10. Sending Messages: Start with a copy of your program from Exercise 8-9.
  Write a function called send_messages() that prints each text message and moves each message to a new list 
  called sent_messages as it’s printed. After calling the function, print both of your lists to make sure the messages
    were moved correctly.
 """
+shortMess:list[str] = ["ciao","come va?","tutto bene?"]
+shortMess1=shortMess
+def send_messsages(listaMess1):
+    sent_mess:list[str]=[]
+    for i in listaMess1:
+        print(i)
+        sent_mess.append(i)
+    print(sent_mess)
+send_messsages(shortMess1)
+
+
+    
+
 """
 8-11. Archived Messages: Start with your work from Exercise 8-10. Call the function send_messages() with a copy of the list
  of messages. After calling the function, print both of your lists to show that the original list has retained its messages.
 """
+#guarda 8-10
 """
 8-12. Sandwiches: Write a function that accepts a list of items a person wants on a sandwich. 
 The function should have one parameter that collects as many items as the function call provides, 
 and it should print a summary of the sandwich that’s being ordered. Call the function three times,
 using a different number of arguments each time.
 """
+def sandwich(ingredienti:list[str]=list[str]):
+    print(f"gli ingredienti del panino sono {ingredienti}")
+sandwich("hamburger","pomodori","insalata")
+
 """
 8-13. User Profile:  Build a profile of yourself by calling build_profile(), using your first and last names and three other 
 key-value pairs that describe you. All the values must be passed to the function as parameters. 
