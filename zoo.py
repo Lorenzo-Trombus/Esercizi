@@ -11,12 +11,26 @@ class Fence:
         self.temperature=temperature
         self.habitat=habitat
 
+    def area_residua(self,area:float):
+        self.areaResidua=area  
+
+         
+
 class Animal:
     def __init__(self,name:str,species:str,age:int, height:float, width:float, preferred_habitat:str, health:float ) -> None:
         self.name=name
         self.species=species
         self.age=age
+        self.height=height
+        self.width=width
+        self.preferred_habitat=preferred_habitat
+        self.health=health
+        self.areaAnimale=height*width
+
     
+    #def area_animale(self,height:float,width:float):
+        #self.areaAnimale=height*width
+
 
 
 class ZooKeeper:
@@ -26,10 +40,10 @@ class ZooKeeper:
         self.id=id
     
     def add_animal(self,animal:Animal,fence:Fence):
-        pass
+        if 
 
     def remove_animal(self,animal: Animal, fence: Fence):
-        pass
+        pass    
 
     def feed(self,animal: Animal):
         pass
