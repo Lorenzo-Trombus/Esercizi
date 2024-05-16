@@ -122,9 +122,13 @@ and a method called open_restaurant() that prints a message indicating that the 
 Make an instance called restaurant from your class. Print the two attributes individually, and then call both methods.
 """
 class Restaurant:
-    def __init__(self,name:str,cuisine_type:str):
+    def __init__(self,name:str,cuisine_type:str,number_served:int=0):
+        self.number_served=number_served
         self.name=name
         self.cuisine_type=cuisine_type
+        
+    def set_number_served(self):
+        self.number_served
 
     def describe_restaurant(self):
         print(f"restaurant name={self.name},cuisine type={self.cuisine_type}")
@@ -137,6 +141,7 @@ restaurant1=Restaurant(name="fermentum",cuisine_type=("romana"))
 
 print(restaurant.name)
 print(restaurant.cuisine_type)
+print(restaurant.number_served)
 print(restaurant.describe_restaurant())
 print(restaurant.open_restaurant())
 print(restaurant1.describe_restaurant())
@@ -159,11 +164,26 @@ class User:
         self.age=age
         self.gender=gender
 
-      
+    def describe_user(self):
+        print(f"name={self.first_name},surname={self.last_name},age={self.age},gender={self.gender}")
+    
+    def greet_user(self):
+        print(f"thank you {self.first_name} {self.last_name}")
+
+
+user=User("brat","bat",19,"male")
+print(user.describe_user())
+print(user.greet_user())
 
 """
-9-4. Number Served: Start with your program from Exercise 9-1. Add an attribute called number_served with a default value of 0. Create an instance called restaurant from this class. Print the number of customers the restaurant has served, and then change this value and print it again. Add a method called set_number_served() that lets you set the number of customers that have been served. Call this method with a new number and print the value again. Add a method called increment_number_served() that lets you increment the number of customers who’ve been served. Call this method with any number you like that could represent how many customers were served in, say, a day of business. 
+9-4. Number Served: Start with your program from Exercise 9-1. Add an attribute called number_served with a default value of 0.
+ Create an instance called restaurant from this class. Print the number of customers the restaurant has served, 
+ and then change this value and print it again. Add a method called set_number_served() that lets you set the number of customers 
+ that have been served. Call this method with a new number and print the value again. Add a method called increment_number_served() 
+ that lets you increment the number of customers who’ve been served. 
+ Call this method with any number you like that could represent how many customers were served in, say, a day of business. 
 """
+#guarda 9-1
 """
 9-5. Login Attempts: Add an attribute called login_attempts to your User class from Exercise 9-3. Write a method called increment_login_attempts() that increments the value of login_attempts by 1. Write another method called reset_login_attempts() that resets the value of login_attempts to 0. Make an instance of the User class and call increment_login_attempts() several times. Print the value of login_attempts to make sure it was incremented properly, and then call reset_login_attempts(). Print login_attempts again to make sure it was reset to 0.
 """

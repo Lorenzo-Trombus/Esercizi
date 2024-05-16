@@ -17,9 +17,7 @@ class Fence:
         self.area=area
         self.temperature=temperature
         self.habitat=habitat
-
-    def area_residua(self,area:float):
-        self.area 
+        self.area_rimanente= self.area - self.area_occupata
 
 
 
@@ -31,7 +29,7 @@ class ZooKeeper:
         self.id=id
     
     def add_animal(self,animal:Animal,fence:Fence):
-        pass
+        if fence.area_rimanente>=
     def remove_animal(self,animal: Animal, fence: Fence):
         pass    
 
