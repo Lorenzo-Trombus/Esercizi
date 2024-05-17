@@ -87,7 +87,7 @@ def check_access(username: str, password: str, is_active: bool) -> str:
         return "Accesso negato"
 print(check_access("admin", "54321", True))
 
-
+ 
 #esercizio 9
 
 def remove_elements(original_set: set[int], elements_to_remove: list[int]) -> set[int]:
@@ -174,6 +174,7 @@ class User:
 user=User("brat","bat",19,"male")
 print(user.describe_user())
 print(user.greet_user())
+
 
 """
 9-4. Number Served: Start with your program from Exercise 9-1. Add an attribute called number_served with a default value of 0.
