@@ -32,7 +32,7 @@ head = ListNode(val=0,
                 next=ListNode(val=1, 
                               next=ListNode(val=5, 
                                             next=ListNode(val=6))))
-print(reverse(head))
+#print(reverse(head))
 
 
 #Esercizio Sudoku
@@ -82,4 +82,90 @@ def sudoku(tavola: list[list[int]]) -> bool:
 # square_i = 2, square_j = 1 -> 7
 # square_i = 2, square_j = 2 -> 8 ---> 3 * square_i + square_j
  
-               
+
+
+
+#Esercizio rotazione lista 
+
+"""
+Scrivi una funzione che ruota gli elementi di una lista verso sinistra di un numero specificato k di posizioni.
+ La rotazione verso sinistra significa che ciascun elemento della lista viene spostato a sinistra di una posizione 
+ e l'elemento iniziale viene spostato alla fine della lista. 
+ Per la rotazione utilizzare lo slicing e gestire il caso in cui il numero specificato di posizioni 
+ sia maggiore della lunghezza della lista.
+
+For example:
+Test 	
+print(rotate_left([1, 2, 3, 4, 5], 2))
+
+Result
+
+
+[3, 4, 5, 1, 2]"""
+
+
+"""def rotate_left(elements: list, k: int) -> list:
+    elements1=elements
+    while k>len(elements):
+        k=k-len(elements)
+    for i in elements:
+        while i in range(len(k)):
+            elements.append(i)
+            elements.remove(i)
+    
+print(rotate_left([1, 2, 3, 4, 5], 2))
+"""
+
+#Esercizi di ripasso su Condizionali, Cicli e Funzioni
+
+
+"""
+Scrivere il frammento di codice che cambi il valore intero memorizzato nella variabile x nel seguente modo:
+- se x è pari, deve essere diviso per 2;
+- se x è dispari deve essere moltiplicato per 3 e gli deve essere sottratto 1.
+
+For example:
+Test 	              Result
+
+print(transform(4))     2
+
+	
+
+
+
+print(transform(-10))   -5
+
+	
+
+"""
+
+def transform(x: int) -> int:
+    if x%2==0:
+        x=x/2
+    else:
+        x=(x*3)-1
+    return x
+       
+print(transform(4))
+
+
+"""Sviluppare una funzione in Python per calcolare lo stipendio lordo di ciascuno dei diversi impiegati. 
+L'azienda paga 10 dollari all'ora per le prime 40 ore di lavoro e paga "una volta e mezza" 
+la paga oraria per tutte le ore di lavoro oltre le 40 ore.
+ 
+Per ogni operaio, viene fornito il numero di ore che tale impiegato ha lavorato durante la settimana.
+La vostra funzione deve ricevere questa informazione per ogni impiegato e determinare e stampare lo stipendio lordo."""
+
+"""
+    Test                            Result    
+
+print(calcola_stipendio(40))        400.0
+
+print(calcola_stipendio(0))         0.0
+"""
+	
+def calcola_stipendio(ore_lavorate: int) -> float:
+    pass
+    
+    
+#print(calcola_stipendio(45))
