@@ -165,7 +165,99 @@ print(calcola_stipendio(0))         0.0
 """
 	
 def calcola_stipendio(ore_lavorate: int) -> float:
-    pass
+    if ore_lavorate<=40:
+        stipendio=ore_lavorate*10
+        return stipendio
+    elif ore_lavorate>40:
+        ore_sopra40=ore_lavorate-40
+        stipendio=400+(ore_sopra40*15)
+        return stipendio
+    else:
+        return None
     
+#print(calcola_stipendio(int(input())))
+print(calcola_stipendio(1000))
+
+
+"""
+Scrivere in Python dei cicli che stampino le seguenti sequenze di valori:
+a) 1, 2, 3, 4, 5, 6, 7
+b) 3, 8, 13, 18, 23
+c) 20, 14, 8, 2, -4, -10
+d) 19, 27, 35, 43, 51
+"""
+
+def print_seq(): 
+    i=0
+    print("Sequenza a):")
+    # SCRIVI QUI IL TUO CICLO
+    while i<7:
+        i+=1
+        print(i)
+    i=0
+    print("Sequenza b):")
+    # SCRIVI QUI IL TUO CICLO
+    if i<3:
+        i+=3
+        while i<24:
+            print(i)
+            i+=5
+           
+    i=0
+    print("Sequenza c):")
+    # SCRIVI QUI IL TUO CICLO
+    if i!=20:
+        i=20
+        while i>-11:
+            print(i)
+            i-=6
+    i=0
+    print("Sequenza d):")
+    # SCRIVI QUI IL TUO CICLO
+    if i!=19:
+        i=19
+        while i<52:
+            print(i)
+            i+=8
     
-#print(calcola_stipendio(45))
+    return
+
+print(print_seq())
+
+"""
+Scrivere una funzione chiamata integerPower che, dati in input una base e un esponente, restituisca il risultato della potenza base^exponent. Supporre che base sia un numero intero e che l'esponente sia un valore intero positivo e diverso da 0.
+ 
+La funzione deve usare un ciclo come struttura di controllo per il calcolo del risultato.
+Non utilizzare nessuna funzione della libreria math!
+"""
+def integerPower(base:int,esponente:int)-> int:
+    if esponente>0:
+        new_base=base
+        while esponente>1:
+            new_base=new_base*base
+            esponente-=1
+        return new_base
+    else:
+        None  
+
+
+"""Definire una funzione chiamata hypotenuse che calcoli la lunghezza dell'ipotenusa di un triangolo rettangolo. 
+La funzione deve ricevere due argomenti di tipo float (corrispondenti ai due lati del triangolo) e restituire l'ipotenusa come un float.
+
+Per calcolare l'ipotenusa, si può ricorrere al teorema di Pitagora."""
+
+import math
+
+def hypotenuse(cateto1:float,cateto2:float)-> float:
+    hypo=math.sqrt((cateto1**2)+(cateto2**2))
+    return hypo
+
+print(hypotenuse(3.0, 4.0))
+
+
+"""Scrivi una funzione che unisce due dizionari. Se una chiave è presente in entrambi, somma i loro valori."""
+
+def merge_dictionaries(dict1: dict, dict2: dict) -> dict:
+    for i in dict1:
+        if i in dict2:
+            pass
