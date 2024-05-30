@@ -92,9 +92,9 @@ di un numero determinato di quadrati (es: 5, 3, 10). I bonus sono rappresentati 
 dei bonus sul percorso (chiave) ed i relativi effetti (valore). Consentire agli animali di beneficiare pienamente dei bonus, 
 ma non oltrepassare il traguardo.
 """
-import random
+import random 
 
-numero_casuale=random.randint(1,10)
+#numero_casuale=random.randint(1,10)
 
 posizione_lepre=1
 posizione_tartaruga=1
@@ -121,7 +121,7 @@ def posizioni_sul_percorso():
             i="_"
             percorso_grafico.append(i)
 
-    return percorso_grafico
+    print(''.join(percorso_grafico))
 
 
     
@@ -158,11 +158,20 @@ def mossa_lepre():
             posizione_lepre-=1
         else:
             posizione_lepre=1
-    
+
+def variabilità_ambientale():
+    meteo="soleggiato"
+    if (tempo//10)%2==0:
+        meteo="soleggiato"
+    else:
+        meteo="pioggia"
+    print(meteo)
+
 
 while posizione_lepre<70 or posizione_tartaruga < 70:
     tempo+=1
     print(f"Tempo: {tempo} sec")
+    variabilità_ambientale()
     mossa_tartaruga()
     mossa_lepre()
     print(posizioni_sul_percorso())
@@ -170,13 +179,15 @@ while posizione_lepre<70 or posizione_tartaruga < 70:
         print("ITS A TIE")
         break
     elif posizione_tartaruga>=70:
-        print("TORTOISE WINS||YUCH!!!!")
+        print("TORTOISE WINS||VAY!!!!")
         break
     elif posizione_lepre>=70:
-        print("HARE WINS|| VAY!!!!")
+        print("HARE WINS|| YUCH!!!!")
         break
     
 
+
+#(253//10)%2
 
 
 
