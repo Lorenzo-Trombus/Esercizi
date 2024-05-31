@@ -25,16 +25,13 @@ class Film:
 
 
 class Sala:
-    def __init__(self,id:str,posti_totali:int,posti_prenotati,film_in_programmazione:list[str]):
+    def __init__(self,id:str,posti_totali:int,posti_prenotati,film_in_programmazione:list[Film]):
         self.id=id
         self.film_in_programmazione=film_in_programmazione
         self.posti_totali=posti_totali
         self.posti_prenotati=posti_prenotati
 
         
-
-
-
     def prenota_posti(self,num_posti):
         if self.posti_totali - self.posti_prenotati >= num_posti:
             self.posti_prenotati+= num_posti
@@ -45,7 +42,6 @@ class Sala:
     def posti_disponibili(self):
         self.posti_liberi= self.posti_totali - self.posti_prenotati
         return f"i posti disponibili sono: {self.posti_liberi}"
-
 
 
 
