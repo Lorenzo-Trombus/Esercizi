@@ -52,9 +52,69 @@ class Cinema:
     def aggiungi_sala(self,sala:Sala):
         self.lista_sale.append(sala)
 
+    def prenota_film(self,titolo_film:str,posti_totali:int):
+        pass
 
+film1=Film(titolo="pirati dei caraibi",durata=146)
+sala1=Sala(id=12345, posti_totali=100,posti_prenotati=0,film_in_programmazione=film1)
+print(sala1.prenota_posti(50))
+print(sala1.posti_disponibili())
+print(sala1.prenota_posti(51))
+print(sala1.prenota_posti(43))
+print(sala1.posti_disponibili())
 
 
 #Gestione di un magazzino
+"""
+Scrivi un programma in Python che gestisca un magazzino. Il programma deve permettere di aggiungere prodotti al magazzino, 
+cercare prodotti per nome e verificare la disponibilità di un prodotto.
+
+Definisci una classe Prodotto con i seguenti attributi:
+- nome (stringa)
+- quantità (intero)
+ 
+Definisci una classe Magazzino con i seguenti metodi:
+- aggiungi_prodotto(prodotto: Prodotto): aggiunge un prodotto al magazzino.
+- cerca_prodotto(nome: str) -> Prodotto: cerca un prodotto per nome e lo ritorna se esiste.
+- verifica_disponibilità(nome: str) -> str: verifica se un prodotto è disponibile in magazzino.
+"""
+
+class Prodotto:
+    def __init__(self,nome:str,quantità:str) -> None:
+        self.nome=nome
+        self.quantità=quantità
+
+dizio_prodotti={} 
+
+class Magazzino:
+    def __init__(self) -> None:
+        pass
+
+    def aggiungi_prodotto(self,prodotto:Prodotto):
+        if prodotto not in dizio_prodotti:
+            dizio_prodotti[prodotto]=prodotto.quantità
+        else:
+            dizio_prodotti[prodotto]+=prodotto.quantità
+
+    def cerca_prodotto(self,nome:str):
+        if nome in dizio_prodotti:
+            return f"{nome}"
+        else:
+            return "il prodotto non è nel magazzino"
+        
+    def verifica_disponibilità(self,nome:str):
+        if nome in dizio_prodotti:
+            return f"sono presenti {dizio_prodotti[nome]} {nome} nel magazzino"
+        else:
+            return f"il prodotto {nome}, non è disponibile"
+        
+prodotto1=Prodotto(nome="aspirapolvere",quantità=3)
+print(dizio_prodotti.aggiungi)
+
+
+
+
+
+
 
 
