@@ -75,7 +75,7 @@ class Media:
     
     def recensione(self):
         return f"Titolo:{self.title}, voto medio: {self.getMediaValutazioni()},Giudizio:{self.getRate()},
-        Percentuali:boh"
+        Percentuali:boh "
 
 
 
