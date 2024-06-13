@@ -109,7 +109,7 @@ class Magazzino:
             return f"il prodotto {nome}, non è disponibile"
         
 prodotto1=Prodotto(nome="aspirapolvere",quantità=3)
-print(dizio_prodotti.aggiungi)
+#print(dizio_prodotti.aggiungi)
 
 
 #ESERCITAZIONI CLASSI CON EREDITARIETÀ
@@ -131,7 +131,50 @@ Se il conteggio è già 0, stampa un messaggio di errore.
 - mostra(): Stampa a schermo il valore corrente del conteggio.
 """
 
+class Contatore:
+     
+    def __init__(self,conteggio:int=0) -> None:
+        self.conteggio=conteggio
 
 
+    def setZero(self):
+        self.conteggio=0
+
+    def add1(self):
+        self.conteggio+=1
+
+    def sub1(self):
+        if self.conteggio >0:
+            self.conteggio-=1
+        else:
+            print(f"Non è possibile eseguire la sottrazione ")
+        
+    def get(self):
+        return self.conteggio
+    
+    def mostra(self):
+        print(f"Conteggio attuale: {self.conteggio}")
+    
+
+
+"""
+c = Contatore()  
+c.add1() 
+c.mostra()
+
+c = Contatore()  
+c.sub1()  
+c.mostra()
+"""
+c = Contatore() 
+c.add1()
+c.add1()
+c.add1()
+c.add1()
+c.sub1()  
+c.add1()
+c.add1()
+z  = c.get()
+print(z)
 
 
