@@ -36,3 +36,44 @@ def area_cerchio(raggio:float):
     return raggio*raggio*3.14
 
 area_cerchio(1)
+
+
+###############
+
+import sys
+
+
+a=[]
+
+b=a
+
+print(sys.getrefcount(a))
+# conta quanti riferimenti ci sono per un elemento
+
+threads:list=[]
+
+def thread_function(name):
+
+    print(f"{name} Time -{time.time()}")
+    time.sleep(2)
+    print(f"{name} Time -{time.time()}")
+
+import threading
+
+for i in range(3):
+
+    x=threading.Thread(target=thread_function, args=(1, ))
+    threads.append(x)
+    x.start()
+
+for t in threads:
+
+    t.join()
+
+print(f"Prima di thread")
+x.start()
+print(f"thread partito ")
+x.join()
+print("thread finito????")
+
+
