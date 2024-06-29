@@ -191,7 +191,7 @@ Call the function with the required information and two other name-value pairs, 
  Your function should work for a call like this one: car = make_car('subaru', 'outback', color='blue', tow_package=True) 
  Print the dictionary that’s returned to make sure all the information was stored correctly. 
 """
-def make_car(manufacturer:str,modelname:str,**kwargs):
+#def make_car(manufacturer:str,modelname:str,**kwargs):
     
 
     
@@ -223,6 +223,24 @@ def ransom(note:str,magazine:str)->bool:
     
     return True
 """    
+ 
+def ransom(note:str,magazine:str)->bool:
+
+    list_lett=[]
+    note_list=list(note)
+    magazine_list:list=list(magazine)
+
+    for lett in note_list:
+        if lett in magazine_list:
+            list_lett.append(lett)
+            magazine_list.remove(lett)
+
+    if list_lett==note_list:
+        return True
+    else:
+        return False
+    
+print(ransom(note="abcd",magazine="asblcgfdj"))
 
 
 
