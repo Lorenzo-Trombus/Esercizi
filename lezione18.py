@@ -10,7 +10,7 @@ Catch any ValueError that occurs, and instead raise a FormulaError.
 If the second input is not '+' or '-', again raise a FormulaError.
 If the input is valid, perform the calculation and print out the result. The user is then prompted to provide new input, and so on, 
 until the user enters quit."""
-
+ 
 def calculator():
     segno:str=input("inserire l'operatore che si vuole utilizzare, per esempio: -,+,*,/ ")
     lista_operatori=["-","+","*","/"]
@@ -35,7 +35,7 @@ def calculator():
             else:
                 print(a/b)
     else:
-        print("bro devi inserire un operatore")
+        print("bro devi inserire un operatore, non una scritta a cazzo")
 
         
 
