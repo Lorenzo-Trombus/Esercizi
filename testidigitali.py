@@ -21,7 +21,7 @@ class Email(Documento):
         self.mittente=mittente
         self.destinatario=destinatario
         self.titolo_messaggio=titolo_messaggio
-        self.testo=Documento.getText()#nun so sicuro 
+
 
     def getMittente(self):
         return self.mittente
@@ -41,5 +41,12 @@ class Email(Documento):
     def setTitolo(self, titolo):
         self.titolo_messaggio=titolo
 
+    def getTesto(self):
+        return self.testo
     
+
+documento1=Documento(testo="lecca lecca senza gengive")
+email1=Email(testo=documento1.testo,mittente="Pippo",destinatario="Baudo",titolo_messaggio="aiuto aiuto")
+
+print(email1.getTesto())
     
