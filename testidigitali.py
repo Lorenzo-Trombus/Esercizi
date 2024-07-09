@@ -41,12 +41,16 @@ class Email(Documento):
     def setTitolo(self, titolo):
         self.titolo_messaggio=titolo
 
-    def getTesto(self):
-        return self.testo
+    def getText(self):
+        return f" Da: {self.mittente}, A: {self.destinatario} \n Titolo: {self.titolo_messaggio} \n Messaggio: {self.testo}"
+    
+    def writeToText(self):
+        with open("testiEmail.txt","w"):
+            self.testo
     
 
-documento1=Documento(testo="lecca lecca senza gengive")
+documento1=Documento(testo="lecca lecca alla cocacola")
 email1=Email(testo=documento1.testo,mittente="Pippo",destinatario="Baudo",titolo_messaggio="aiuto aiuto")
 
-print(email1.getTesto())
-    
+print(email1.writeToText())
+
