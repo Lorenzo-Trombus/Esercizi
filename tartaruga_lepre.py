@@ -4,7 +4,7 @@
     - Passo veloce (50% di probabilità): avanza di 3 quadrati.
     - Scivolata (20% di probabilità): arretra di 6 quadrati. Non può andare sotto il quadrato 1.
     - Passo lento (30% di probabilità): avanza di 1 quadrato.
-
+  
 - Lepre:
     - Riposo (20% di probabilità): non si muove.
     - Grande balzo (20% di probabilità): avanza di 9 quadrati.
