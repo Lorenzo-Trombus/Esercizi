@@ -211,7 +211,7 @@ For example:"""
 
 
 class Movie:
-    def __init__(self,movie_id:str, title:str, director:str, is_rented: bool) -> None:
+    def __init__(self,movie_id:str, title:str, director:str, is_rented: bool=False) -> None:
         self.movie_id=movie_id
         self.title=title
         self.director=director
@@ -245,19 +245,83 @@ class Customer:
 
     def return_movie(self,movie:Movie):
         if movie not in self.rented_movies:
-            self.rented_movies.remove(movie)
+            print(f"Il film {movie.title} non è stato noleggiato da questo utente")
+        elif movie in self.rented_movies:
             movie.return_movie()
-            
-
-    
+            self.rented_movies.remove(movie)
         
-        
-
-class Customer:
-    pass
 
 class VideoRentalStore:
-    pass
+    def __init__(self, movies:dict[str,Movie]=dict(),customers:dict[str,Customer]=dict()) -> None:
+        self.movies=movies
+        self.customers=customers
+    
+    def add_movie(self,movie_id:str,director:str,title:str=Movie ):
+        if movie_id in self.movies:
+            print(f"Il film con ID  {movie_id}: esiste già")
+        else :
+            self.movies[movie_id]=title
+
+    def register_customer(self,customer_id:str,name:str=Customer):
+        if customer_id in self.customers:
+            print(f"Il cliente con ID {customer_id} è già registrato")
+        else:
+            self.customers[customer_id]=name
+      
+    def rent_movie(self, customer_id:str, movie_id:str):
+        if customer_id in self.customers and movie_id in self.movies:
+            self.customers[customer_id].rent_movie(movie=self.movies[movie_id])
+        else:
+            print(f"Cliente o film non trovato")
+        
+    def return_movie(self,customer_id:str, movie_id:str):
+        if customer_id in self.customers and movie_id in self.movies:
+            self.customers[customer_id].return_movie(movie=self.movies[movie_id])
+        else:
+            print(f"Cliente o film non trovato")
+
+    def get_rented_movies(self, customer_id:str):
+        if customer_id in self.customers:
+           return  self.customers[customer_id].rented_movies
+        else:
+            print("Cliente non trovato")
+            return f"{[]}"
+
+
+
+# Creazione di un nuovo videonoleggio
+videonoleggio = VideoRentalStore()
+
+# Aggiunta di nuovi film
+videonoleggio.add_movie("1", "Inception", "Christopher Nolan")
+videonoleggio.add_movie("2", "The Matrix", "Wachowski Brothers")
+
+# Registrazione di nuovi clienti
+videonoleggio.register_customer("101", "Alice")
+videonoleggio.register_customer("102", "Bob")
+
+# Noleggio di film
+videonoleggio.rent_movie("101", "1")
+videonoleggio.rent_movie("102", "2")
+
+# Tentativo di noleggiare un film già noleggiato
+videonoleggio.rent_movie("101", "1")
+
+# Restituzione di film
+videonoleggio.return_movie("101", "1")
+
+# Tentativo di restituire un film non noleggiato
+videonoleggio.return_movie("101", "1")
+
+# Ottenere la lista dei film noleggiati da un cliente
+rented_movies_alice = videonoleggio.get_rented_movies("101")
+print(f"Film noleggiati da Alice: {[movie.title for movie in rented_movies_alice]}")
+
+rented_movies_bob = videonoleggio.get_rented_movies("102")
+print(f"Film noleggiati da Bob: {[movie.title for movie in rented_movies_bob]}")
+
+
+        
 
 
 
